@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Question.init(
     {
-      name: {
-        allowNull: false,
-        type: DataTypes.TEXT,
-      },
       quest: {
         allowNull: false,
         type: DataTypes.TEXT,
