@@ -10,7 +10,7 @@ function Modal() {
   };
   return (
     <div>
-      <h1>{Card.quest}</h1>
+      {/* <h1>{Card.quest}</h1> */}
       <form onSubmit={submit}>
         <input
           type="text"
