@@ -33,9 +33,10 @@ router.post('/log', async (req, res) => {
     if (name && password) {
       const user = await User.findOne({ where: { name } });
       const pass = await bcrypt.compare(req.body.password, user.password);
-      if (user.login === name && pass) {
+      if (user.name === name && pass) {
         req.session.userId = user.id;
-        res.json({ message: 'ok' });
+        res.locals.user = { name: user.name, id: user.id };
+        res.status(201).json({ name: user.name, id: user.id, email: user.email });
       } else {
         res.json({ message: 'введены неверные данные' });
       }
@@ -45,7 +46,7 @@ router.post('/log', async (req, res) => {
   }
 });
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   // удаление сессии на сервере
   req.session.destroy((error) => {
     if (error) {
