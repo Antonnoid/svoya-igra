@@ -1,13 +1,22 @@
-// const router = require("express").Router();
-// const { Question } = require("../../db/models");
+const express = require("express");
 
+const router = express.Router();
 
-// router.get("/:idCard", async (req, res) => {
-//   const { idCard } = req.params;
-//   const card = await Card.findOne({ where: { id: idCard } });
- 
-// });
-// module.exports = router;
-const router = require("express").Router();
+const { Theme, Question } = require("../../db/models");
 
-module.exports = router
+router.get("/", async (req, res) => {
+  try {
+    const questions = await Question.findAll({
+      include: [
+        {
+          model: Theme,
+        },
+      ],
+    });
+    res.json(questions);
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+
+module.exports = router;
