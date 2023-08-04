@@ -5,7 +5,7 @@ import { RootState } from '../../store/store';
 import * as api from './api';
 import './modal.css';
 
-function Modal({ question }: { question: Question }): JSX.Element {
+function Modal({ question, close }: { question: Question ,close:()=>void}): JSX.Element {
   const { user } = useSelector((store: RootState) => store.auth);
   const [answer, setAnswer] = useState('');
   const [result, setResult] = useState('');
@@ -25,18 +25,26 @@ function Modal({ question }: { question: Question }): JSX.Element {
     }
   };
   return (
-    <div className='modal_container'>
-      <h1>{question.quest}</h1>
-      <form onSubmit={submit}>
-        <input
-          type="text"
-          name="Answer"
-          placeholder="Ваш Ответ"
-          onChange={(e) => setAnswer(e.target.value)}
-        />
-        <button type="submit">Ответить</button>
-      </form>
-      <div>{result}</div>
+    <div className="modalSto">
+      <div className="modal_container">
+        <div onClick={close}>fdsf</div>
+        <h1>{question.quest}</h1>
+        <form onSubmit={submit}>
+          <div className="inpModal">
+            <input
+              className="input"
+              type="text"
+              name="Answer"
+              placeholder="Ваш Ответ"
+              onChange={(e) => setAnswer(e.target.value)}
+            />
+          </div>
+          <button className="button" type="submit">
+            Ответить
+          </button>
+        </form>
+        <div>{result}</div>
+      </div>
     </div>
   );
 }
