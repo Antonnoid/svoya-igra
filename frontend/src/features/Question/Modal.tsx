@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Question } from './type';
 import { RootState } from '../../store/store';
 import * as api from './api'
 
-function Modal({ question }: { question: Question }) {
+function Modal({ question }: { question: Question }): JSX.Element {
   const { user } = useSelector((store: RootState) => store.auth);
   const [answer, setAnswer] = useState('');
   const [result, setResult] = useState('');
-  const dispatch = useDispatch();
 
   const submit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
