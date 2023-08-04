@@ -74,77 +74,11 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 150px;
 }
 .QuestionCard h3 {
   font-size: xx-large;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .material-icons {
   background: #817d7d;
@@ -180,3 +114,21 @@ nav {
   font-size: 46px;
   margin: 200px;
 }
+
+.roja {
+  height: 60px;
+  margin-left: 30px;
+}
+.newStyle {
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px;
+  color: transparent;
+  background-image: url('https://avatars.dzeninfra.ru/get-zen_doc/1887828/pub_5dc52f57ddfef600ad79f3f6_5dc532f63d008800aeb49afc/scale_1200');
+}
+
