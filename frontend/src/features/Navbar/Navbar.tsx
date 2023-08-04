@@ -15,8 +15,9 @@ function Navbar(): JSX.Element {
   return (
     <nav>
       <div className="nav-wrapper">
+      <img className='roja' src='https://img.icons8.com/plasticine/400w/the-jigsaw-killer.png' alt='...'/>
         <a href="#" className="brand-logo">
-          👨‍🎓 Своя игра
+           Я хочу сыграть с тобой в игру
         </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
