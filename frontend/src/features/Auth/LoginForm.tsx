@@ -13,7 +13,7 @@ function LoginForm(): JSX.Element {
     e.preventDefault();
     api
       .loginFetch({ name, password })
-      .then((data) => dispatch({ type: 'auth/reg', payload: data }));
+      .then((data) => dispatch({ type: 'auth/log', payload: data }));
   };
   return (
     <div>
