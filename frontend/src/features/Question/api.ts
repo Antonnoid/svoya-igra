@@ -1,6 +1,6 @@
-import { Question } from './type';
+import { Theme } from './type';
 
-export const initQuestionFetch = async (): Promise<Question[]> => {
+export const initQuestionFetch = async (): Promise<Theme[]> => {
   const res = await fetch('api/questions');
   const data = await res.json();
   return data;
