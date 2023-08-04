@@ -4,7 +4,7 @@ import reducerQuestions from '../features/Question/reducer/reducer';
 
 const rootReducer = combineReducers({
   auth: reducerAuth,
-  questions: reducerQuestions,
+  themes: reducerQuestions,
 });
 
 export default rootReducer;
