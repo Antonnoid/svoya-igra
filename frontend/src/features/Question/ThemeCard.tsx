@@ -5,7 +5,7 @@ import QuestionCard from './QuestionCard';
 function ThemeCard({ theme }: { theme: Theme }): JSX.Element {
   return (
     <div className="ThemeCard">
-      <h3>{theme.name}</h3>
+      <h3 className='themeName'>{theme.name}</h3>
       {theme.Questions.map((question) => <QuestionCard question={question} key={question.id} />)}
     </div>
   );

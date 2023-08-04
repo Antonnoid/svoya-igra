@@ -52,3 +52,13 @@ nav {
   font-style: normal;
   font-weight: 600;
 }
+.ThemeCard {
+  display: flex;
+  align-items: center;
+}
+.themeName {
+  width: 320px;
+}
+.QuestionCard {
+  align-items: center;
+}
