@@ -74,6 +74,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 150px;
 }
 .QuestionCard h3 {
   font-size: xx-large;
