@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Question } from './type';
-// import Modal from './Modal';
+import Modal from './Modal';
 
 function QuestionCard({ question }: { question: Question }): JSX.Element {
+  const [state, setState] = useState(true);
   return (
-    <div className="QuestionCard">
-      <h3>Вопрос: {question.quest}</h3>
+    <div className="QuestionCard" onClick={() => setState((prev) => !prev)}>
       <h3>{question.price}</h3>
-      {/* <Modal question={question} /> */}
+      {!state && <Modal question={question} />}
     </div>
   );
 }
