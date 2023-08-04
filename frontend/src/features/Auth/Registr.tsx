@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import * as api from './api';
 import { RootState } from '../../store/store';
 
@@ -9,6 +10,7 @@ function Registr():JSX.Element {
     const [email, setEmail] = useState('');
     const dispatch = useDispatch();
     const { error } = useSelector((store:RootState) => store.auth);
+    const navigate = useNavigate();
 
     const registr = (e:React.FormEvent<HTMLFormElement>):void => {
        e.preventDefault();
@@ -21,8 +23,9 @@ function Registr():JSX.Element {
             <input name="name" placeholder="name" required onChange={(e) => setName(e.target.value)} />
             <input name="password" placeholder="password" required onChange={(e) => setPassword(e.target.value)} />
             <input name="email" placeholder="email" required onChange={(e) => setEmail(e.target.value)} />
-            <button type="submit">Регистрация</button>
+            <button className='btn_reg' type="submit">Регистрация</button>
         </form>
+        <div onClick={() => navigate(-1)}> <i className="material-icons">arrow_back</i></div>
         <div>{error}</div>
     </div>
   );
