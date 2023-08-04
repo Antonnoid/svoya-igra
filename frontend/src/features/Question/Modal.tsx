@@ -1,16 +1,32 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Question } from './type';
+import { RootState } from '../../store/store';
+import * as api from './api'
 
-function Modal() {
-  const [answer, setAnswer] = useState("");
+function Modal({ question }: { question: Question }) {
+  const { user } = useSelector((store: RootState) => store.auth);
+  const [answer, setAnswer] = useState('');
+  const [result, setResult] = useState('');
   const dispatch = useDispatch();
 
   const submit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    let userScore = 0;
+    if ('id' in user) {
+      if (question.answer === answer) {
+        userScore = user.score + question.price;
+        setResult('Правильно!');
+      } else {
+        setResult(`Не правильно! Правильный ответ ${question.answer}`);
+        userScore = user.score - question.price;
+      }
+      api.userScoreFetch( userScore)
+    }
   };
   return (
     <div>
-      {/* <h1>{Card.quest}</h1> */}
+      <h1>{question.quest}</h1>
       <form onSubmit={submit}>
         <input
           type="text"
@@ -20,6 +36,7 @@ function Modal() {
         />
         <button type="submit">Ответить</button>
       </form>
+      <div>{result}</div>
     </div>
   );
 }
