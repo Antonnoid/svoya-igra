@@ -17,7 +17,7 @@ function Modal() {
     if (question.answer === answer) {
       setResult('Правильно!');
     } else {
-      setResult(`Не правильно! Правильный ответ ${result}`);
+      setResult(`Не правильно! Правильный ответ ${question.answer}`);
     }
   };
   return (
