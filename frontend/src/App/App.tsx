@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 import Registr from '../features/Auth/Registr';
 import QuestionsList from '../features/Question/QuestionsList';
 import Navbar from '../features/Navbar/Navbar';
 import Scores from '../features/Scores/Scores';
+import Modal from '../features/Question/Modal';
 
 function App(): JSX.Element {
   return (
