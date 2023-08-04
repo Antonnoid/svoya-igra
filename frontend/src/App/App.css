@@ -5,6 +5,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  background-image: url('https://vistapointe.net/images/saw-10.jpg');
 }
 
 .brand-logo {
@@ -55,10 +56,25 @@ nav {
 .ThemeCard {
   display: flex;
   align-items: center;
+  color: #ec9932;
 }
 .themeName {
   width: 320px;
 }
 .QuestionCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(#ee4343, rgb(189, 161, 35));
+}
+.questList {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+.QuestionCard h3 {
+  font-size: xx-large;
 }

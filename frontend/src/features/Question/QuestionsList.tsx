@@ -14,7 +14,7 @@ function QuestionsList(): JSX.Element {
     );
   }, []);
   return (
-    <div>
+    <div className='questList'>
       {themes.map((theme) => (
         <ThemeCard theme={theme} key={theme.id} />
       ))}
