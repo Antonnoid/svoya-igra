@@ -1,7 +1,7 @@
-import { Question } from '../type';
+import { Theme } from '../type';
 
 export type State = {
-  questions: Question[];
+  themes: Theme[];
 };
 
 

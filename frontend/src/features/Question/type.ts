@@ -6,3 +6,9 @@ export type Question = {
   themeId: number;
 };
 
+export type Theme = {
+    id: number;
+    name: string;
+    Questions: Question[]
+};
+
