@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Question } from './type';
 import { RootState } from '../../store/store';
-import * as api from './api'
+import * as api from './api';
+import './modal.css';
 
 function Modal({ question }: { question: Question }): JSX.Element {
   const { user } = useSelector((store: RootState) => store.auth);
@@ -20,11 +21,11 @@ function Modal({ question }: { question: Question }): JSX.Element {
         setResult(`Не правильно! Правильный ответ ${question.answer}`);
         userScore = user.score - question.price;
       }
-      api.userScoreFetch( userScore)
+      api.userScoreFetch(userScore);
     }
   };
   return (
-    <div>
+    <div className='modal_container'>
       <h1>{question.quest}</h1>
       <form onSubmit={submit}>
         <input
