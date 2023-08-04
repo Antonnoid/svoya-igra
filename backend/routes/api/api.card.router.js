@@ -6,14 +6,14 @@ const { Theme, Question } = require("../../db/models");
 
 router.get("/", async (req, res) => {
   try {
-    const questions = await Question.findAll({
+    const themes = await Theme.findAll({
       include: [
         {
-          model: Theme,
+          model: Question,
         },
       ],
     });
-    res.json(questions);
+    res.json(themes);
   } catch (error) {
     res.json({ message: error.message });
   }

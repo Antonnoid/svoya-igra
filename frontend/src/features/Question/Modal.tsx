@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-const question = {
-  themeId: 1,
-  quest: 'Самая частоупоминаемая болезнь в сериале "Доктор Хаус"',
-  answer: 'Волчанка',
-  price: 200,
-};
+import { useSelector } from 'react-redux';
+import { Question } from './type';
+import { RootState } from '../../store/store';
+import * as api from './api'
 
-function Modal() {
+function Modal({ question }: { question: Question }): JSX.Element {
+  const { user } = useSelector((store: RootState) => store.auth);
   const [answer, setAnswer] = useState('');
   const [result, setResult] = useState('');
-  const dispatch = useDispatch();
 
   const submit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (question.answer === answer) {
-      setResult('Правильно!');
-    } else {
-      setResult(`Не правильно! Правильный ответ ${result}`);
+    let userScore = 0;
+    if ('id' in user) {
+      if (question.answer === answer) {
+        userScore = user.score + question.price;
+        setResult('Правильно!');
+      } else {
+        setResult(`Не правильно! Правильный ответ ${question.answer}`);
+        userScore = user.score - question.price;
+      }
+      api.userScoreFetch( userScore)
     }
   };
   return (
