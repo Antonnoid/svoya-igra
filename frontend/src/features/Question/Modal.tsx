@@ -9,12 +9,11 @@ function Modal({ question, close }: { question: Question ,close:()=>void}): JSX.
   const { user } = useSelector((store: RootState) => store.auth);
   const [answer, setAnswer] = useState('');
   const [result, setResult] = useState('');
-
   const submit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     let userScore = 0;
     if ('id' in user) {
-      if (question.answer === answer) {
+      if (question.answer.toLowerCase() === answer.toLowerCase()) {
         userScore = user.score + question.price;
         setResult('Правильно!');
       } else {
@@ -27,8 +26,9 @@ function Modal({ question, close }: { question: Question ,close:()=>void}): JSX.
   return (
     <div className="modalSto">
       <div className="modal_container">
-        <div onClick={close}>fdsf</div>
+        <button type='button' className='button cross' onClick={close}>X</button>
         <h1>{question.quest}</h1>
+
         <form onSubmit={submit}>
           <div className="inpModal">
             <input
@@ -43,7 +43,7 @@ function Modal({ question, close }: { question: Question ,close:()=>void}): JSX.
             Ответить
           </button>
         </form>
-        <div>{result}</div>
+        <h1>{result}</h1>
       </div>
     </div>
   );

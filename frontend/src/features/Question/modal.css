@@ -11,46 +11,53 @@
   backdrop-filter: blur(5px);
 }
 .modal_container {
-  background-color: rgb(128, 125, 125);
+  background: linear-gradient(#ee4343, rgb(189, 161, 35));
   padding: 60px;
-  width: 900px;
-  height: 500px;
+  width: 1400px;
+  height: 1100px;
   border-radius: 5%;
   position: relative;
   z-index: 200;
   border: 2px solid black;
+  display: flex;
+  flex-direction: column;
 }
 .inpModal {
   margin-top: 86px;
   border: 2px solid #111111;
   border-radius: 14px;
-  height: 56px;
+  height: 80px;
   overflow: hidden;
-  width: 500px;
+  width: 800px;
   margin-bottom: 60px;
   display: flex;
   align-items: center;
+ 
   justify-content: space-between;
   background-color: aliceblue;
 }
 .input {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 18px;
-    line-height: 23px;
-    letter-spacing: -0.05em;
-    border: none;
-    outline: none !important;
-  
-    padding-left: 21px;
-  }
-  .button {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 18px;
-    line-height: 23px;
-    letter-spacing: -0.03em;
-    background-color: #111111;
-    color: #ffffff;
-    height: 38.08px;
-    margin-right: 8px;
-    border-radius: 8px;
-  }
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 32px;
+  line-height: 23px;
+  letter-spacing: -0.05em;
+  border: none;
+  outline: none;
+  padding-left: 41px;
+  margin-left: 30px;
+}
+.button {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 25px;
+  line-height: 23px;
+  letter-spacing: -0.03em;
+  background-color: #111111;
+  color: #ffffff;
+  height: 38.08px;
+  margin-right: 8px;
+  border-radius: 8px;
+}
+.cross{
+    width: 40px;
+    height: 40px;
+}
