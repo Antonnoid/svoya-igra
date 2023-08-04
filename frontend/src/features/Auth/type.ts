@@ -4,6 +4,11 @@ export type Registr = {
   password:string;
 };
 
+export type Login = {
+  name:string;
+  password:string;
+};
+
 export type User = {
   name:string;
   email:string;

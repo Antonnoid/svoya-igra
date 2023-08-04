@@ -27,6 +27,24 @@ router.post('/reg', async (req, res) => {
   }
 });
 
+router.post('/log', async (req, res) => {
+  try {
+    const { name, password } = req.body;
+    if (name && password) {
+      const user = await User.findOne({ where: { name } });
+      const pass = await bcrypt.compare(req.body.password, user.password);
+      if (user.login === name && pass) {
+        req.session.userId = user.id;
+        res.json({ message: 'ok' });
+      } else {
+        res.json({ message: 'введены неверные данные' });
+      }
+    }
+  } catch (error) {
+    res.json({ messageError: error.message });
+  }
+});
+
 router.get('/logout', (req, res) => {
   // удаление сессии на сервере
   req.session.destroy((error) => {
@@ -39,6 +57,7 @@ router.get('/logout', (req, res) => {
       .json({ message: 'Успешный выход' });
   });
 });
+
 router.get('/verification', async (req, res) => {
   try {
     const { userId } = req.session;
