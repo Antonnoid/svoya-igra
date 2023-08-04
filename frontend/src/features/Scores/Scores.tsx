@@ -2,7 +2,7 @@ import React from 'react';
 
 function Scores():JSX.Element {
   return (
-    <div>
+    <div className='score'>
         Тут будет Рейтинг
     </div>
   );

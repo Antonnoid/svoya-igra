@@ -78,3 +78,105 @@ nav {
 .QuestionCard h3 {
   font-size: xx-large;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.material-icons {
+  background: #817d7d;
+  width: 40px;
+  height: 35px;
+  margin: 5px;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.registration, .login {
+  background-color: #ffffff;
+  margin: 20px auto;
+  width: 500px;
+  padding: 5px;
+}
+
+.registration input {
+  margin-left: 15px;
+}
+
+
+.login input {
+  margin-left: 15px;
+}
+
+.btn_reg {
+  margin-left: 20px;
+}
+
+.score {
+  color: #ffffff;
+  font-size: 46px;
+  margin: 200px;
+}
