@@ -6,7 +6,6 @@ function QuestionCard({ question }: { question: Question }): JSX.Element {
   const [state, setState] = useState(false);
   const close = (): void => {
     setState((p) => !p);
-    console.log('00000000000000000000000');
   };
   const open = (): void => {
     setState((p) => !p);
@@ -14,7 +13,7 @@ function QuestionCard({ question }: { question: Question }): JSX.Element {
   return (
     <div className="QuestionCard">
       <div onClick={open} >
-        <h3>{question.price}</h3>
+        <h3 className='questPrice'>{question.price}</h3>
       </div>
 
       {state && <Modal question={question} close={close} />}

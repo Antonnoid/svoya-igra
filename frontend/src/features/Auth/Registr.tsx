@@ -16,7 +16,7 @@ function Registr():JSX.Element {
       .then((data) => dispatch({ type: 'auth/reg', payload: data }));
     };
   return (
-    <div>
+    <div className='registration'>
         <form onSubmit={registr}>
             <input name="name" placeholder="name" required onChange={(e) => setName(e.target.value)} />
             <input name="password" placeholder="password" required onChange={(e) => setPassword(e.target.value)} />

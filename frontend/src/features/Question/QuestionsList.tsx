@@ -18,7 +18,7 @@ function QuestionsList(): JSX.Element {
     .then((data) => dispatch({ type: 'auth/verification', payload: data }));
   }, []);
   return (
-    <div>
+    <div className='questList'>
       {themes.map((theme) => (
         <ThemeCard theme={theme} key={theme.id} />
       ))}
