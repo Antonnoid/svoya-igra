@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import ThemeCard from './ThemeCard';
 import * as api from './api';
+import * as api2 from '../Auth/api';
 
 function QuestionsList(): JSX.Element {
   const dispatch = useDispatch();
@@ -12,6 +13,9 @@ function QuestionsList(): JSX.Element {
     api.initQuestionFetch()
     .then((data) => dispatch({ type: 'questions/init', payload: data })
     );
+    api2
+    .verificationFetch()
+    .then((data) => dispatch({ type: 'auth/verification', payload: data }));
   }, []);
   return (
     <div className='questList'>
