@@ -1,9 +1,9 @@
 export type Question = {
-    id:number;
-    quest: string;
-    answer: string;
-    price: number;
-    themeId: number;
+  id: number;
+  quest: string;
+  answer: string;
+  price: number;
+  themeId: number;
 };
 
 export type Theme = {
@@ -11,3 +11,4 @@ export type Theme = {
     name: string;
     Questions: Question[]
 };
+
