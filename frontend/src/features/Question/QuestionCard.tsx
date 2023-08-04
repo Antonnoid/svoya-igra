@@ -6,7 +6,7 @@ function QuestionCard({ question }: { question: Question }): JSX.Element {
   return (
     <div className="QuestionCard">
       <h3>Вопрос: {question.quest}</h3>
-      <h3>Цена: {question.price}</h3>
+      <h3>{question.price}</h3>
       {/* <Modal question={question} /> */}
     </div>
   );
